@@ -14,7 +14,7 @@ function RideCardsContainer(props) {
                             color={ride.zone.color}
                             rideName={ride.name}
                             remainingTickets={ride.remainingTickets}
-                            returnTime={ride.return_time}
+                            returnTime={ride.returnTime}
                             isToggled={props.selectedRideId === ride.id}
                             onCardSelected={(() => {
                                 props.onCardSelected(ride.id)

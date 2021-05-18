@@ -1,17 +1,16 @@
 import React from 'react';
+import moment from "moment";
+import {Grid} from "@material-ui/core";
 import Card from "@material-ui/core/Card";
+import {makeStyles} from "@material-ui/core/styles";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
-import successesIcon from "../icons/successes_icon.png";
-import {makeStyles} from "@material-ui/core/styles";
-import {Grid} from "@material-ui/core";
-import moment from "moment";
 import Button from '@material-ui/core/Button';
+import successesIcon from "../icons/successes_icon.png";
 
 const useStyles = makeStyles({
-
     card: {
         backgroundColor: '#373737',
         width: '100%',
@@ -101,7 +100,9 @@ function AfterSubmit(props) {
                     </CardContent>
                 </CardContent>
             </Card>
-            <Button color='secondary' variant="contained" disableElevation
+            <Button color='secondary'
+                    variant="contained"
+                    disableElevation
                     onClick={onGoBack}>Go Back
             </Button>
         </Grid>

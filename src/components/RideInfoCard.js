@@ -1,25 +1,21 @@
 import React from 'react';
+import moment from "moment";
 import {makeStyles} from '@material-ui/core/styles';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Clock_icon from "../icons/RideInfoCardIcons/clock.png"
-import ticket_icon from "../icons/RideInfoCardIcons/ticket.png"
 import Avatar from '@material-ui/core/Avatar';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import moment from "moment";
-import {Grid} from "@material-ui/core";
+import ticket_icon from "../icons/RideInfoCardIcons/ticket.png"
+import Clock_icon from "../icons/RideInfoCardIcons/clock.png"
 
 const useStyles = makeStyles({
-
     card: {
         backgroundColor: props => props.isToggled
             ? props.color
             : '#373737',
-        height: '170px',
-        paddingLeft: '5px',
-        paddingRight: '5px'
+        height: '170px'
     },
     header: {
         backgroundColor: props => props.color,
@@ -36,16 +32,8 @@ const useStyles = makeStyles({
         fontSize: 14,
     },
     bottomContent: {
-
+        display: 'flex',
         color: '#656565',
-        marginTop: '40px'
-    },
-    time: {
-        marginRight: '30px'
-    },
-    avatar: {
-        width: '20px',
-        height: '20px',
     },
     soldOut: {
         color: "darkred",
@@ -72,17 +60,12 @@ const RideInfoCard = props => {
                         {rideName}
                     </Typography>
                     {isSoldOut && <Typography className={classes.soldOut}> SOLD OUT</Typography>}
-
                     <CardContent className={classes.bottomContent}>
-                        <Avatar alt="Clock icon" src={Clock_icon} className={classes.avatar}/>
+                        <Avatar alt="Clock icon" src={Clock_icon}/>
                         <Typography>{returnTimeHoursAndMin}</Typography>
-
-                        <Avatar alt="Ticket icon" src={ticket_icon} className={classes.avatar}/>
+                        <Avatar alt="Ticket icon" src={ticket_icon}/>
                         <Typography>{remainingTickets}</Typography>
-
                     </CardContent>
-
-
                 </CardContent>
             </CardActionArea>
         </Card>

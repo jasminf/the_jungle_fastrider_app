@@ -1,15 +1,15 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import {Grid} from '@material-ui/core';
+import {makeStyles} from '@material-ui/core/styles';
 import Input from '@material-ui/core/Input'
-import Hidden from '@material-ui/core/Hidden';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles({
     root: {
         marginBottom: '10px',
-        paddingBottom: '10px',
+        paddingBottom: '10px'
     },
     input: {
         backgroundColor: '#ffffff',
@@ -23,7 +23,6 @@ const useStyles = makeStyles({
 });
 
 function PinCodeSubmissionBox(props) {
-
     const isDesktop = useMediaQuery(theme => theme.breakpoints.up('sm'));
     const classes = useStyles({isDesktop});
     const {setPinNumber, pinNumber, onClickSubmitBtn} = props
